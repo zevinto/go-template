@@ -20,7 +20,7 @@ func GetConfig() (c *Config) {
 
 	// 实例化viper, 并根据地址读取配置文件
 	v := viper.New()
-	v.SetConfigFile(rootDir + "config.yml")
+	v.SetConfigFile(rootDir + "/config.yml")
 	err := v.ReadInConfig()
 	if err != nil {
 		fmt.Println("ReadInConfigError: ", err)

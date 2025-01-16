@@ -4,7 +4,7 @@ type Database struct {
 	Driver   string
 	Host     string
 	Port     string
-	User     string
+	Username string
 	Password string
 	Database string
 	Charset  string
