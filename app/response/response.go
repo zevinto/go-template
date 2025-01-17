@@ -30,3 +30,11 @@ func Error(c *gin.Context, code int, message string) {
 		Data:    nil,
 	})
 }
+
+func ValidateFailed(c *gin.Context, message string) {
+	c.JSON(http.StatusOK, Response{
+		Code:    400,
+		Message: message,
+		Data:    nil,
+	})
+}

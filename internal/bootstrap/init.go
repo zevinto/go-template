@@ -6,6 +6,7 @@ import (
 	"go-template/internal/global"
 	"go-template/internal/logger"
 	"go-template/internal/mysql"
+	"go-template/internal/validator"
 )
 
 func init() {
@@ -22,4 +23,7 @@ func init() {
 		fmt.Println("初始化日志错误：", err)
 		return
 	}
+
+	// 注册验证器
+	validator.InitValidator()
 }
