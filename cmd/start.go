@@ -4,6 +4,7 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	_ "go-template/app/event"
 	"go-template/app/route"
 	"go-template/internal/server"
 

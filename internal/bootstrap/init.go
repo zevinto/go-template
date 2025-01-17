@@ -3,6 +3,7 @@ package bootstrap
 import (
 	"fmt"
 	"go-template/internal/config"
+	"go-template/internal/event"
 	"go-template/internal/global"
 	"go-template/internal/logger"
 	"go-template/internal/mysql"
@@ -26,4 +27,7 @@ func init() {
 
 	// 注册验证器
 	validator.InitValidator()
+
+	// 初始化事件机制
+	global.EventDispatcher = event.New()
 }
