@@ -31,10 +31,14 @@ func Error(c *gin.Context, code int, message string) {
 	})
 }
 
-func ValidateFailed(c *gin.Context, message string) {
-	c.JSON(http.StatusOK, Response{
-		Code:    400,
-		Message: message,
-		Data:    nil,
-	})
+func ValidateFailed(c *gin.Context, msg string) {
+	Error(c, ValidateError, msg)
+}
+
+func PermissionDenied(c *gin.Context) {
+	Error(c, HaveNoPermission, ErrorMap[HaveNoPermission])
+}
+
+func BusinessFail(c *gin.Context, msg string) {
+	Error(c, BusinessError, msg)
 }
