@@ -2,8 +2,9 @@ package bootstrap
 
 import (
 	"fmt"
+	"go-template/app/task"
 	"go-template/internal/config"
-	"go-template/internal/event"
+	"go-template/internal/crontab"
 	"go-template/internal/global"
 	"go-template/internal/logger"
 	"go-template/internal/mysql"
@@ -29,5 +30,10 @@ func init() {
 	validator.InitValidator()
 
 	// 初始化事件机制
-	global.EventDispatcher = event.New()
+	//global.EventDispatcher = event.New()
+
+	// 初始化定时任务
+	global.Crontab = crontab.Init()
+	global.Crontab.AddTask(task.Tasks()...)
+	global.Crontab.Start()
 }

@@ -2,6 +2,7 @@ package global
 
 import (
 	"go-template/internal/config"
+	"go-template/internal/crontab"
 	"go-template/internal/event"
 
 	"go.uber.org/zap"
@@ -13,4 +14,5 @@ var (
 	DB              *gorm.DB
 	Logger          *zap.Logger
 	EventDispatcher *event.Dispatcher
+	Crontab         *crontab.Crontab
 )
